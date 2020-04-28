@@ -1,0 +1,3 @@
+[submodule "libqpsd"]
+	path = libqpsd
+	url = https://github.com/nomacs/libqpsd.git
