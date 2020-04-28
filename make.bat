@@ -1,3 +1,5 @@
+@echo off
+
 REM build imageformats
 
 REM Be sure to run this in a VS Native Tools environment
@@ -8,8 +10,8 @@ REM fix windows backslashed paths : /
 SET MYPATH=%MYPATH:\=/%
 
 REM compile dependencies first
-call make-libde265.bat
-call make-libheif.bat
+call %mypath%make-libde265.bat
+call %mypath%make-libheif.bat
 
 REM SET QT5="C:/Qt/Qt-5.14.1-installer/5.14.2/msvc2017_64/bin"
 SET QT5=%1

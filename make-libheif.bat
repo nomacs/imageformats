@@ -13,8 +13,6 @@ if exist %build_dir%/%name%/Release (
     goto :eof
 )
 
-echo %mypath%build/libde265
-
 cmake -DCMAKE_PREFIX_PATH="%mypath%build/libde265" --clean-first^
  -B%build_dir% %mypath%/%name%
 
