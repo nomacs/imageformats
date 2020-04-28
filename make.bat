@@ -9,14 +9,19 @@ SET MYPATH=%~dp0
 REM fix windows backslashed paths : /
 SET MYPATH=%MYPATH:\=/%
 
+IF [%2]==[] (
+    SET BUILD_DIR=%mypath%build
+) ELSE (
+    SET BUILD_DIR=%2
+)
+
 REM compile dependencies first
-call %mypath%make-libde265.bat
-call %mypath%make-libheif.bat
+call %mypath%make-libde265.bat %build_dir%
+call %mypath%make-libheif.bat %build_dir%
 
 REM SET QT5="C:/Qt/Qt-5.14.1-installer/5.14.2/msvc2017_64/bin"
 SET QT5=%1
 SET NAME=imageformats
-SET BUILD_DIR=%mypath%build
 
 REM if exist %build_dir%Release ( 
 REM     echo %name% exists, skipping
