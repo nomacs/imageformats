@@ -18,4 +18,32 @@ make QT_PATH
 where `QT_PATH` points to your Qt directory.
 
 
+# Add a new plugin
+First make sure, that the cmake compiles on Windows.
+
+````
+git submodule add link-to-your-fork
+````
+
+Add the following lines to the CMakeLists.txt (let's assume your plugin is named libjpg):
+
+````cmake
+OPTION (ENABLE_JPG "Enable JPG Plugin" ON)
+
+# ...
+
+IF (ENABLE_JPG)
+    add_subdirectory(libjpg)
+ENDIF(ENABLE_JPG)
+
+# ...
+
+IF(ENABLE_JPG)
+    MESSAGE(STATUS " with JPG .................. YES")
+ELSE()
+    MESSAGE(STATUS " with JPG .................. NO")
+ENDIF()
+````
+
+
 

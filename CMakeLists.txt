@@ -11,6 +11,10 @@ PROJECT(imageformats)
 
 OPTION (ENABLE_PSD "Enable PSD Plugin" ON)
 OPTION (ENABLE_PCX "Enable PCX Plugin" ON)
+OPTION (ENABLE_HEIF "Enable HEIF Plugin" ON)
+
+# not supported yet
+OPTION (ENABLE_FLIF "Enable FLIF Plugin" OFF)
 
 # NMC_PREPARE_PLUGIN()
 # NMC_FINDQT()
@@ -26,6 +30,13 @@ IF (ENABLE_PCX)
     add_subdirectory(libqpcx)
 ENDIF(ENABLE_PCX)
 
+IF (ENABLE_HEIF)
+    add_subdirectory(qt-heif-image-plugin)
+ENDIF(ENABLE_HEIF)
+
+IF (ENABLE_FLIF)
+    add_subdirectory(qt-flif-plugin)
+ENDIF(ENABLE_FLIF)
 
 # status
 MESSAGE(STATUS "")
@@ -44,5 +55,17 @@ IF(ENABLE_PCX)
 ELSE()
     MESSAGE(STATUS " with PCX .................. NO")
 ENDIF()
+
+IF(ENABLE_HEIF)
+    MESSAGE(STATUS " with HEIF ................. YES")
+ELSE()
+    MESSAGE(STATUS " with HEIF ................. NO")
+ENDIF()
+
+# IF(ENABLE_FLIF)
+#     MESSAGE(STATUS " with FLIF ................. YES")
+# ELSE()
+#     MESSAGE(STATUS " with FLIF ................. NO")
+# ENDIF()
 
 MESSAGE(STATUS "----------------------------------------------------------------------------------")
