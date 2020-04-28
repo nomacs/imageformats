@@ -1,3 +1,6 @@
 [submodule "libqpsd"]
 	path = libqpsd
 	url = https://github.com/nomacs/libqpsd.git
+[submodule "libqpcx"]
+	path = libqpcx
+	url = https://github.com/nomacs/libqpcx.git

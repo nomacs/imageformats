@@ -6,10 +6,11 @@ endif()
 
 PROJECT(imageformats)
 
-# include macros needed
-include("cmake/Utils.cmake")
+# # include macros needed
+# include("cmake/Utils.cmake")
 
 OPTION (ENABLE_PSD "Enable PSD Plugin" ON)
+OPTION (ENABLE_PCX "Enable PCX Plugin" ON)
 
 # NMC_PREPARE_PLUGIN()
 # NMC_FINDQT()
@@ -21,3 +22,27 @@ IF (ENABLE_PSD)
     add_subdirectory(libqpsd)
 ENDIF(ENABLE_PSD)
 
+IF (ENABLE_PCX)
+    add_subdirectory(libqpcx)
+ENDIF(ENABLE_PCX)
+
+
+# status
+MESSAGE(STATUS "")
+MESSAGE(STATUS "----------------------------------------------------------------------------------")
+MESSAGE(STATUS " ${PROJECT_NAME} for nomacs  <https://nomacs.org>")
+MESSAGE(STATUS "")
+
+IF(ENABLE_PSD)
+    MESSAGE(STATUS " with PSD .................. YES")
+ELSE()
+    MESSAGE(STATUS " with PSD .................. NO")
+ENDIF()
+
+IF(ENABLE_PCX)
+    MESSAGE(STATUS " with PCX .................. YES")
+ELSE()
+    MESSAGE(STATUS " with PCX .................. NO")
+ENDIF()
+
+MESSAGE(STATUS "----------------------------------------------------------------------------------")
