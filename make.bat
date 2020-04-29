@@ -28,7 +28,7 @@ REM     echo %name% exists, skipping
 REM     goto :eof
 REM )
 
-cmake -DCMAKE_PREFIX_PATH="%qt5%;%mypath%build/libheif" --clean-first^
+cmake -DCMAKE_PREFIX_PATH="%qt5%;%build_dir%/libheif" --clean-first^
  -B%build_dir% %mypath%
 
 cmake --build %build_dir% --config Release -- -m

@@ -19,6 +19,6 @@ if exist %build_dir%/%name%/Release (
 )
 
 cmake^
- -B%build_dir% %mypath%%name%
+ -B%build_dir%/%name% %mypath%/%name%
 
-cmake --build %build_dir% --config Release -- -m
+cmake --build %build_dir%/%name% --config Release -- -m
