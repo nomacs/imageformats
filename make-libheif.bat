@@ -13,11 +13,12 @@ IF [%1]==[] (
     SET BUILD_DIR=%1
 )
 
-if exist %build_dir%/%name%/Release ( 
+if exist %build_dir%/%name%/%name%/Release/%name%.dll ( 
     echo %name% exists, skipping
     goto :eof
 )
 
+echo building %name%
 cmake -DCMAKE_PREFIX_PATH="%build_dir%/libde265" --clean-first^
  -B%build_dir%/%name% %mypath%/%name%
 
