@@ -23,3 +23,5 @@ cmake -DCMAKE_PREFIX_PATH="%build_dir%/libde265" --clean-first^
  -B%build_dir%/%name% %mypath%/%name%
 
 cmake --build %build_dir%/%name% --config Release -- -m
+
+echo %name% finished
