@@ -1,5 +1,5 @@
-REM build libheif
 @echo off
+REM build libheif
 
 SET MYPATH=%~dp0
 REM fix windows backslashed paths : /
