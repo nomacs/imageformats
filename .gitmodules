@@ -4,9 +4,6 @@
 [submodule "libqpcx"]
 	path = libqpcx
 	url = https://github.com/nomacs/libqpcx.git
-[submodule "qt-flif-plugin"]
-	path = qt-flif-plugin
-	url = https://github.com/nomacs/qt-flif-plugin.git
 [submodule "qt-heif-image-plugin"]
 	path = qt-heif-image-plugin
 	url = https://github.com/nomacs/qt-heif-image-plugin.git
