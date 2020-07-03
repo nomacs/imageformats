@@ -13,6 +13,3 @@
 [submodule "libde265"]
 	path = libde265
 	url = https://github.com/nomacs/libde265.git
-[submodule "scripts"]
-	path = scripts
-	url = https://github.com/nomacs/scripts.git
